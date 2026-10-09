@@ -1,0 +1,358 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+.aa-root{--color1:#170d4c;--color2:#110a39;--color3:#0b0726;--color4:#060313;--color5:#000000;--ink:#f2f0ff;--soft:#c4bde8;--aa-blue:#ffffff;position:relative;min-height:100svh;overflow:hidden;color:var(--ink);font-family:"Poppins","Montserrat","Avenir Next",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;background:linear-gradient(155deg,var(--color3) 0%,var(--color4) 55%,var(--color5) 100%)}
+.aa-root :where(button){font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer}
+.aa-root :where(h1,p){margin:0}
+.aa-root :where(svg){display:block;max-width:none;flex:none}
+.aa-root :where(canvas){display:block}
+.aa-root :focus-visible{outline:2px solid #fff;outline-offset:3px}
+.aa-shell{position:relative;min-height:100svh;display:flex;padding:clamp(14px,5vw,64px);container-type:inline-size}
+
+/* fundo */
+.aa-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden;color:rgba(255,255,255,.2)}
+.aa-bg svg{position:absolute}
+.aa-bg-img{position:absolute;inset:0;background:url("fundo.jpeg") center/cover no-repeat;opacity:0;transition:opacity .6s ease}
+.aa-bg-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,3,19,.2) 0%,rgba(6,3,19,.3) 60%,rgba(0,0,0,.85) 100%)}
+.aa-root.has-bg .aa-bg-img{opacity:1}
+.aa-root.has-bg .aa-blob,.aa-root.has-bg .aa-bg svg{display:none}
+.aa-root.has-bg .aa-glass{background:linear-gradient(135deg,rgba(6,3,19,.5),rgba(6,3,19,.28))}
+.aa-blob{position:absolute;border-radius:50%;animation:aa-float 18s ease-in-out infinite alternate}
+.b1{width:46cqi;height:46cqi;left:-10cqi;top:-12cqi;background:var(--color1);filter:blur(70px);opacity:1}
+.b2{width:38cqi;height:38cqi;right:-8cqi;bottom:-10cqi;background:var(--color1);filter:blur(80px);opacity:.9;animation-delay:-6s}
+.b3{width:30cqi;height:30cqi;left:34cqi;top:-17cqi;background:var(--color2);filter:blur(26px);opacity:1;animation-delay:-3s}
+.aa-orbit-spin{transform-box:view-box;transform-origin:50% 50%;animation:aa-spin 60s linear infinite}
+.aa-orbit-spin-r{animation-duration:90s;animation-direction:reverse}
+
+/* tela de vidro */
+.aa-glass{position:relative;z-index:1;width:100%;max-width:1240px;margin:auto;min-height:calc(100svh - 2 * clamp(14px,5vw,64px));display:flex;flex-direction:column;gap:clamp(18px,3cqi,36px);padding:clamp(18px,3.2cqi,40px);border-radius:clamp(18px,2.6cqi,30px);background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(255,255,255,.04));-webkit-backdrop-filter:blur(22px) saturate(1.35);backdrop-filter:blur(22px) saturate(1.35);border:1.5px solid rgba(255,255,255,.22);box-shadow:0 40px 90px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.25)}
+
+.aa-top{display:flex;align-items:center;justify-content:space-between}
+.aa-brand{display:flex;align-items:center;gap:10px;font-style:italic;font-weight:700;font-size:clamp(20px,2.4cqi,28px);letter-spacing:-.01em}
+.aa-logo{width:34px;height:34px;color:var(--ink);overflow:visible}
+.aa-rot{transform:rotate(-45deg)}
+.aa-logo-arrow{transform-box:view-box;transform-origin:50px 50px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.aa-logo-spin{transform-box:view-box;transform-origin:50px 50px;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.aa-brand:hover .aa-logo-spin{transform:rotate(-360deg)}
+
+.aa-main{flex:1;display:grid;gap:clamp(18px,3cqi,36px);align-items:center}
+.aa-copy{display:flex;flex-direction:column;gap:clamp(14px,1.8cqi,20px)}
+.aa-head{border-left:5px solid #fff;padding-left:clamp(12px,1.6cqi,20px)}
+.aa-title{font-weight:800;font-size:clamp(40px,6.6cqi,84px);line-height:.95;letter-spacing:-.02em}
+.aa-sub{display:block;margin-top:8px;font-weight:500;font-size:clamp(15px,2cqi,26px);letter-spacing:.02em;text-transform:uppercase}
+.aa-copy p{font-size:clamp(13px,1.3cqi,15px);line-height:1.65;color:var(--soft);max-width:48ch}
+.aa-ctas{display:flex;flex-wrap:wrap;gap:10px}
+.aa-btn{padding:10px 18px;border-radius:999px;font-weight:600;font-size:12px;line-height:1;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.aa-btn:hover{transform:translateY(-2px)}
+.aa-btn:active{transform:scale(.97)}
+.aa-btn-solid{background:#fff;color:var(--color1);box-shadow:0 10px 24px -12px rgba(255,255,255,.5)}
+.aa-btn-light{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+
+.aa-stage{display:flex;flex-direction:column;gap:10px}
+.aa-head-img{position:relative;margin:0 auto;height:clamp(120px,19cqi,240px);aspect-ratio:742/757;display:grid;place-items:center;pointer-events:none}
+.aa-head-img::before{content:"";position:absolute;inset:-8%;border-radius:50%;background:radial-gradient(closest-side,rgba(110,90,230,.28),rgba(60,40,170,.1) 60%,transparent 80%);animation:aa-pulse 8s ease-in-out infinite alternate}
+.aa-head-img img{position:relative;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45)) drop-shadow(0 0 16px rgba(150,130,255,.22));animation:aa-bob 9s ease-in-out infinite alternate}
+.aa-head-img canvas{position:absolute;left:-45%;top:-22%;width:190%;height:150%;pointer-events:none;-webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side,#000 55%,transparent 100%)}
+@keyframes aa-bob{from{transform:translateY(-3px)}to{transform:translateY(3px)}}
+@keyframes aa-pulse{from{opacity:.6}to{opacity:1}}
+.aa-wm{position:relative;height:clamp(170px,30cqi,400px);cursor:crosshair;touch-action:pan-y}
+.aa-wm canvas{position:absolute;left:0;top:0;width:100%;height:100%}
+.aa-hint{align-self:flex-end;display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--soft)}
+.aa-hint b{font-weight:700;color:#ff4d5e}
+.aa-pop-dot{width:7px;height:7px;border-radius:99px;background:#d90429;animation:aa-blink 1.6s ease-in-out infinite}
+
+.aa-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.2)}
+.aa-info b{display:block;font-size:12px;font-weight:700}
+.aa-info span{font-size:11px;line-height:1.4;color:var(--soft)}
+
+@container (min-width:760px){.aa-main{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}}
+@keyframes aa-spin{to{transform:rotate(360deg)}}
+@keyframes aa-blink{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes aa-float{to{transform:translate(2cqi,2cqi)}}
+@media (prefers-reduced-motion:reduce){.aa-blob,.aa-orbit-spin,.aa-pop-dot,.aa-head-img img,.aa-head-img::before{animation:none}.aa-logo-arrow,.aa-logo-spin{transition:none}}
+
+
+/* =====================================================================
+   Timeline horizontal com scroll (vem do outro código)
+   ===================================================================== */
+    /* ============ Variáveis (equivalentes às props do componente) ============ */
+    :root {
+      --color1:#170d4c; --color2:#110a39; --color3:#0b0726; --color4:#060313; --color5:#000000;
+      --color-foreground: #f2f0ff;
+      --color-muted-foreground: #c4bde8;
+      --color-background: #000000;
+      --active-color: #ef233c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      background: var(--color-background);
+      color: var(--color-foreground);
+      font-family: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .outro, #journey :where(h2, h4, p) { margin: 0; font-weight: 400; }
+
+        /* ============ Seção final ============ */
+    .outro {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      text-align: center;
+      font-size: clamp(16px, 2vw, 22px);
+      line-height: 1.5;
+      color: var(--color-muted-foreground);
+      background:
+        radial-gradient(70vw 45vw at 50% 100%, var(--color1), transparent 70%),
+        linear-gradient(180deg, var(--color3) 0%, var(--color5) 100%);
+    }
+
+    /* ============ Timeline ============ */
+    #journey {
+      position: relative;
+      width: 100%;
+      height: 200vw;
+      color: var(--color-foreground);
+      background:
+        radial-gradient(60vw 40vw at 85% 20%, color-mix(in srgb, var(--color1) 85%, transparent), transparent 70%),
+        radial-gradient(50vw 35vw at 10% 90%, color-mix(in srgb, var(--color2) 90%, transparent), transparent 70%),
+        linear-gradient(180deg, var(--color5) 0%, var(--color4) 45%, var(--color3) 100%);
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      padding-top: 10%;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      align-items: center;
+      gap: 5vw;
+      width: 240vw;
+      height: 30vw;
+      margin-right: 2vw;
+      padding: 0 5vw;
+    }
+
+    .cover {
+      position: relative;
+      flex: none;
+      width: 30vw;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 1vw;
+      border: 1.5px solid rgba(255, 255, 255, .22);
+      box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .9), inset 0 1px 0 rgba(255, 255, 255, .25);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, color-mix(in srgb, var(--color1) 75%, transparent), color-mix(in srgb, var(--color4) 70%, transparent));
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .cover img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.75) contrast(1.05);
+    }
+
+    .track { position: relative; width: 100%; height: 100%; }
+
+    /* Linha horizontal central */
+    .axis {
+      position: absolute;
+      left: 0;
+      top: 49%;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: fit-content;
+    }
+
+    .axis-dot {
+      width: .8vw;
+      height: .8vw;
+      border-radius: 9999px;
+      background: var(--active-color);
+      box-shadow: 0 0 10px color-mix(in srgb, var(--active-color) 70%, transparent);
+    }
+
+    .journey-line {
+      width: 0%;
+      height: 1px;
+      border-radius: 9999px;
+      background: var(--active-color);
+    }
+
+    /* Linhas superior e inferior */
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    .row-top { height: 50%; gap: .5vw; }
+    .row-bottom { height: 50%; }
+
+    .head-col {
+      width: 20%;
+      height: 100%;
+      padding-top: 2vw;
+    }
+
+    .head-col h2 {
+      width: 65%;
+      font-size: 3vw;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: .95;
+    }
+
+    .period-col {
+      width: 34%;
+      height: 100%;
+      padding-top: 2vw;
+    }
+
+    .period-col p {
+      font-size: 1.4vw;
+      line-height: 1.2;
+      color: var(--color-muted-foreground);
+    }
+
+    .items { display: flex; width: 100%; height: 100%; }
+    .items-top { column-gap: 15vw; }
+    .items-bottom { column-gap: 20vw; margin-left: 7vw; }
+
+    .item { position: relative; height: 100%; padding: 0 3vw; }
+    .items-top .item { width: 30vw; }
+    .items-bottom .item { width: 25vw; }
+
+    .stem-wrap {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .items-top .stem-wrap { top: 0; bottom: 0; }
+    .items-bottom .stem-wrap { bottom: -1%; }
+
+    .dot {
+      position: relative;
+      width: 1vw;
+      height: 1vw;
+      margin-left: -.5vw;           /* substitui translateX(-50%) para não conflitar com o GSAP */
+      aspect-ratio: 1;
+      border-radius: 9999px;
+      background: var(--active-color);
+    }
+
+    .stem {
+      width: 1px;
+      height: 94%;
+      border-radius: 9999px;
+      background: var(--active-color);
+    }
+    .items-top .stem { transform-origin: bottom; }
+    .items-bottom .stem { transform-origin: top; }
+
+    .text-top { margin-top: -1vw; }
+    .text-top > * + *, .text-bottom > * + * { margin-top: 1vw; }
+
+    .text-bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 100%;
+      height: 100%;
+    }
+
+    .item h4 {
+      font-size: 1.9vw;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      line-height: 1.05;
+    }
+
+    .item .desc {
+      width: 100%;
+      font-size: 1.2vw;
+      line-height: 1.25;
+      color: var(--color-muted-foreground);
+    }
+
+    /* ============ Mobile ============ */
+    @media (max-width: 600px) {
+      #journey { height: 400vh; }
+
+      .sticky { top: 5%; }
+
+      .slider {
+        width: 800vw;
+        height: 80vh;
+        padding: 0 7vw;
+      }
+
+      .cover {
+        width: 85vw;
+        height: 65vw;
+        border-radius: 5vw;
+      }
+
+      .axis-dot { width: 2vw; height: 2vw; }
+
+      .head-col { height: fit-content; padding-top: 5vw; }
+      .head-col h2 { font-size: 8.5vw; }
+
+      .period-col { width: 30%; padding-top: 5vw; }
+      .period-col p { font-size: 4.2vw; }
+
+      .items-top { column-gap: 40vw; }
+      .items-bottom { column-gap: 40vw; margin-left: 7vw; }
+
+      .items-top .item {
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        padding: 0 7vw;
+      }
+      .items-bottom .item { width: 70vw; padding: 0 7vw; }
+
+      .dot { width: 2.5vw; height: 2.5vw; margin-left: -1.25vw; }
+      .items-bottom .stem { height: 100%; }
+
+      .text-top { margin-top: -2vw; }
+      .item h4 { font-size: 5.6vw; }
+      .item .desc { font-size: 4.2vw; }
+    }
+
+/* =====================================================================
+   Transições entre telas (scroll)
+   Cada tela fica dentro de um [data-flow-section]. A tela seguinte entra
+   com fade por cima da anterior, que fica fixada atrás.
+   ===================================================================== */
+.flow-art{width:100%;overflow-x:clip}
+.flow-section{position:relative;width:100%;overflow:clip}
+.flow-inner{position:relative;width:100%}
+
+/* =====================================================================
+   Scroll to scale: zoom na palavra "Leiah" ao rolar
+   ===================================================================== */
+.aa-zoom-wash{position:absolute;inset:0;z-index:5;background:#b3001b;opacity:0;pointer-events:none}
+.aa-wm{will-change:transform;transform-origin:50% 50%}
+.aa-zooming .aa-wm{cursor:default}

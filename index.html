@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LEIAH · IFCE Campus Maranguape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<div class="flow-art" id="flowArt">
+
+<!-- Tela 1: início -->
+<div class="flow-section" data-flow-section aria-label="Início">
+<div class="flow-inner" data-flow-inner>
+<div class="aa-root" id="root">
+  <div class="aa-shell" id="shell">
+
+    <!-- fundo: manchas desfocadas + órbitas -->
+    <div class="aa-bg" aria-hidden="true">
+      <div class="aa-bg-img"></div>
+      <i class="aa-blob b1"></i><i class="aa-blob b2"></i><i class="aa-blob b3"></i>
+      <svg style="left:42%;top:-30%;width:90cqi;height:90cqi" viewBox="0 0 100 100" fill="none">
+        <g class="aa-orbit-spin"><circle cx="50" cy="50" r="49" stroke="currentColor" stroke-width=".15"/><circle cx="99" cy="50" r=".9" fill="var(--aa-blue)"/></g>
+      </svg>
+      <svg style="left:-22%;top:30%;width:60cqi;height:60cqi" viewBox="0 0 100 100" fill="none">
+        <g class="aa-orbit-spin aa-orbit-spin-r" id="orbit2"><circle cx="50" cy="50" r="49" stroke="currentColor" stroke-width=".2"/></g>
+      </svg>
+    </div>
+
+    <!-- a "tela dentro da tela" (vidro translúcido) -->
+    <main class="aa-glass">
+      <header class="aa-top">
+        <div class="aa-brand">
+          <svg id="logo" class="aa-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-linecap="round" role="img" aria-label="Logo LEIAH">
+            <defs>
+              <mask id="cut" maskUnits="userSpaceOnUse" x="-20" y="-20" width="140" height="140">
+                <rect x="-20" y="-20" width="140" height="140" fill="#fff" stroke="none"/>
+                <g class="aa-logo-arrow aa-rot"><path d="M8 50H86" stroke="#000" stroke-width="5" stroke-linecap="butt" style="transform:translate(0,8px)"/></g>
+              </mask>
+            </defs>
+            <g mask="url(#cut)"><g class="aa-logo-spin">
+              <path d="M14 50a36 36 0 1 0 72 0a36 36 0 1 0-72 0" stroke-width="9"/>
+              <path d="M34.4 34.4A22 22 0 0 0 34.4 65.6" stroke-width="6.5"/>
+              <path d="M65.6 34.4A22 22 0 0 1 65.6 65.6" stroke-width="6.5"/>
+              <path d="M43.5 41V53a6.5 6.5 0 0 0 13 0V41" stroke-width="6.5"/>
+              <path d="M50 41V50" stroke-width="5"/>
+            </g></g>
+            <g class="aa-logo-arrow aa-rot">
+              <path d="M86 50H98" stroke-width="8"/>
+              <path d="M85 38L98 50L85 62" stroke-width="7" stroke-linejoin="round"/>
+            </g>
+          </svg>
+          <span>Leiah</span>
+        </div>
+        <button type="button" class="aa-menu" aria-label="Menu">
+          <svg width="30" height="22" viewBox="0 0 30 22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 3h28M1 11h28M1 19h28"/></svg>
+        </button>
+      </header>
+
+      <section class="aa-main">
+        <div class="aa-copy">
+          <div class="aa-head">
+            <h1 class="aa-title">LEIAH<span class="aa-sub">IFCE Maranguape</span></h1>
+          </div>
+          <p>O LEIAH é o Laboratório de Eletrônica, Informática Aplicada e Humanidades do IFCE Campus Maranguape. Um espaço acadêmico e de pesquisa interdisciplinar, que integra o ensino e o desenvolvimento da tecnologia e das ciências exatas (eletrônica e informática) com as ciências humanas e sociais, como ensino de história, memória local e identidade. Serve a pesquisas, atividades de extensão e ao atendimento aos estudantes.</p>
+          <div class="aa-ctas">
+            <button type="button" class="aa-btn aa-btn-solid">Atendimento ao estudante</button>
+            <button type="button" class="aa-btn aa-btn-light">Sobre o laboratório</button>
+          </div>
+        </div>
+
+        <div class="aa-stage">
+          <figure class="aa-head-img"><canvas id="fx" aria-hidden="true"></canvas><img src="leiah-cabeca.png" alt="Silhueta de uma cabeça feita de triângulos coloridos que se desfazem, ligados por uma rede de pontos" width="742" height="757" decoding="async"></figure>
+          <div class="aa-wm" id="wm"><canvas id="cv" aria-hidden="true"></canvas></div>
+          <span class="aa-hint" aria-live="polite"><i class="aa-pop-dot"></i>Clique nas bolhas. Elas estouram.<b id="pops"></b></span>
+        </div>
+      </section>
+
+      <footer class="aa-info">
+        <div><b>Foco</b><span>Interdisciplinar</span></div>
+        <div><b>Atendimento</b><span>Terças e quartas</span></div>
+        <div><b>Docente</b><span>Profa. Ana Amélia Rodrigues de Oliveira (História)</span></div>
+      </footer>
+    </main>
+
+  </div>
+  <div class="aa-zoom-wash" aria-hidden="true"></div>
+</div>
+</div><!-- /flow-inner -->
+</div><!-- /flow-section -->
+
+<!-- Tela 2: timeline (montada pelo JS a partir dos dados em script.js) -->
+<div class="flow-section" data-flow-section aria-label="Timeline">
+<div class="flow-inner" data-flow-inner>
+<section id="journey"></section>
+</div>
+</div>
+
+<!-- Tela 3: portfólio estilizado (layout novo, conteúdo do LEIAH) -->
+<div class="flow-section" data-flow-section aria-label="O laboratório">
+<div class="flow-inner" data-flow-inner>
+<div class="jk"><main class="main">
+
+<section class="hero" id="inicio-lab">
+  <div class="fade" data-delay="0" data-y="-20"><nav class="nav"><a href="#sobre">Laboratório</a><a href="#eixos">Eixos</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav></div>
+  <div class="hero-title-wrap"><div class="fade" data-delay="0.15" data-y="40"><h2 class="hero-heading hero-h1">Leiah</h2></div></div>
+  <div class="hero-bottom">
+    <div class="fade" data-delay="0.35" data-y="20"><p class="hero-tagline">eletrônica, informática aplicada e humanidades no IFCE Maranguape</p></div>
+    <div class="fade" data-delay="0.5" data-y="20"><a href="mailto:bessa.jessyca@ifce.edu.br?subject=Interesse%20em%20pesquisa%20no%20LEIAH" class="contact-btn">Contato</a></div>
+  </div>
+  <div class="portrait"><div class="fade" data-delay="0.6" data-y="30"><div class="magnet" data-magnet data-padding="150" data-strength="3"><div class="magnet-inner"><img src="leiah-cabeca.png" alt="Cabeça feita de fragmentos coloridos, símbolo do LEIAH" /></div></div></div></div>
+</section>
+
+<section class="marquee" id="marquee" aria-hidden="true">
+  <div class="marquee-row row-1" id="row1"><div class="tile">Acessibilidade</div><div class="tile">Visão computacional</div><div class="tile">Humanidades digitais</div><div class="tile">Django</div><div class="tile">Nanofotônica</div><div class="tile">Deep learning</div><div class="tile">RAG</div><div class="tile">Chatbot</div><div class="tile">Inclusão</div></div>
+  <div class="marquee-row row-2" id="row2"><div class="tile">LLM</div><div class="tile">Libras</div><div class="tile">IA generativa</div><div class="tile">Gênero em STEM</div><div class="tile">Pesquisa-ação</div><div class="tile">Ética digital</div><div class="tile">Qualitativa</div><div class="tile">Ensino de Matemática</div><div class="tile">Orange</div></div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="about-inner">
+    <div class="about-text">
+      <p class="eyebrow fade">Ciclo 2025 – 2026 · Release</p>
+      <div class="fade" data-y="40"><h2 class="hero-heading section-title">O laboratório</h2></div>
+      <p class="about-paragraph" id="animated-text" data-text="O laboratório nasceu como LEIA — Eletrônica e Informática Aplicada. Ganhou o H de Humanidades quando ficou claro que os problemas que valiam a pena não cabiam só na engenharia."></p>
+    </div>
+    <div class="stats"><div class="stat fade" data-delay="0.0"><b class="hero-heading">4</b><span>frentes de pesquisa em andamento</span></div><div class="stat fade" data-delay="0.1"><b class="hero-heading">16+</b><span>edições da ONHB catalogadas em banco de dados relacional</span></div><div class="stat fade" data-delay="0.2"><b class="hero-heading">2</b><span>grandes áreas: Ciências Exatas e da Terra + Multidisciplinar</span></div><div class="stat fade" data-delay="0.3"><b class="hero-heading">2023</b><span>ano de consolidação do laboratório, ainda como LEIA</span></div></div>
+    <div class="about-more fade"><p>No IFCE Campus Maranguape, estudantes do ensino médio integrado e da graduação constroem tecnologia que responde a perguntas reais: como tornar uma avaliação acessível, como um acervo histórico vira dado, como a IA entra na sala de aula sem apagar o pensamento crítico. Quatro frentes de pesquisa em andamento e cinco já concluídas — e um laboratório onde exatas e humanidades trabalham na mesma bancada.</p><p>A marca conta a mesma história: uma cabeça montada com fragmentos de cores diferentes, conectados por uma rede de nós — e uma parte deles ainda solta, em movimento. Cinco cores, cinco frentes de conhecimento que só fazem sentido juntas.</p><p>O LEIAH é o laboratório de pesquisa do IFCE Campus Maranguape onde iniciação científica deixa de ser exercício e vira produto. Cada bolsista conduz uma frente própria, com cronograma de doze meses, orientação semanal, registro mensal de desenvolvimento e entrega pública ao final — resumo expandido, artigo em evento, plataforma no ar.</p><p>O que distingue o laboratório é a mistura deliberada. Na mesma sala, uma pesquisa de nanofotônica computacional convive com um estudo qualitativo sobre ética no uso de IA por adolescentes; um banco de dados de olimpíada de História convive com uma plataforma de adaptação de provas para estudantes surdos e com TEA. A informática é o método comum; as humanidades definem para quem o método serve.</p><p>Há ainda uma escolha metodológica constante: <strong>ferramentas gratuitas e abertas</strong>. Modelos com camada livre, bases vetoriais locais, Python, Colab, frameworks open source. Não por limitação, mas por princípio — o que se constrói aqui precisa ser reprodutível em qualquer campus da rede federal, sem orçamento.</p></div>
+    <a href="mailto:bessa.jessyca@ifce.edu.br?subject=Interesse%20em%20pesquisa%20no%20LEIAH" class="contact-btn">Falar com a coordenação</a>
+  </div>
+</section>
+
+<section class="services" id="eixos">
+  <h2 class="section-title services-title">Eixos</h2>
+  <p class="sec-sub">As frentes individuais se agrupam em eixos que se retroalimentam — o dado levantado por uma pesquisa costuma virar insumo da seguinte.</p>
+  <div class="services-list"><div class="service fade" data-delay="0.0"><span class="service-num">01</span><div class="service-body"><h3 class="service-name">IA para inclusão e acessibilidade</h3><p class="service-desc">Adaptação automatizada de avaliações, descrição de imagens, recursos visuais para o ensino de estudantes surdos e com TEA. Referência normativa: WCAG 2.1, eMAG e a Lei Brasileira de Inclusão.</p></div></div><div class="service fade" data-delay="0.1"><span class="service-num">02</span><div class="service-body"><h3 class="service-name">Humanidades digitais</h3><p class="service-desc">Acervos históricos tratados como dados: modelagem relacional, categorização historiográfica, mineração e plataformas de consulta pública.</p></div></div><div class="service fade" data-delay="0.2"><span class="service-num">03</span><div class="service-body"><h3 class="service-name">Educação, ética e letramento em IA</h3><p class="service-desc">Como estudantes e docentes realmente usam IA, onde está a fronteira do uso legítimo e o que fazer com a confiança acrítica em respostas geradas.</p></div></div><div class="service fade" data-delay="0.3"><span class="service-num">04</span><div class="service-body"><h3 class="service-name">Equidade de gênero em STEM</h3><p class="service-desc">Diagnóstico da presença e da permanência feminina nos cursos de Informática do campus, seguido de ação interventiva construída a partir das falas das estudantes.</p></div></div><div class="service fade" data-delay="0.4"><span class="service-num">05</span><div class="service-body"><h3 class="service-name">IA para ciência e engenharia</h3><p class="service-desc">Aprendizado de máquina e LLMs aplicados à predição e ao design inverso de nanoestruturas fotônicas, a partir de simulações numéricas.</p></div></div></div>
+</section>
+
+<section class="projects" id="projetos">
+  <h2 class="hero-heading section-title projects-title">Em andamento</h2>
+  <div class="cards"><div class="card-wrap"><div class="card" style="--i:0"><div class="card-top"><div class="card-head"><span class="card-num">01</span><div class="card-meta"><span class="card-cat">Acessibilidade · Visão computacional</span><h3 class="card-name">Olhar Acessível: descrição automática de imagens</h3></div></div><span class="live-btn">Em andamento</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Rayssa Emelly Moura da Silva</b><span>Técnico Integrado em Informática · PIBIC Jr · Bolsista CNPq</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Acessibilidade</i><i>Visão computacional</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Descrição textual e em áudio de imagens do ambiente escolar para apoio a pessoas com deficiência visual, usando modelos de visão e linguagem gratuitos (BLIP, LLaVA, Florence-2) e síntese de voz livre, com banco de 200 a 300 imagens do campus e avaliação participativa das descrições.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:1"><div class="card-top"><div class="card-head"><span class="card-num">02</span><div class="card-meta"><span class="card-cat">Humanidades digitais · Django</span><h3 class="card-name">ONHB em dados</h3></div></div><span class="live-btn">Em andamento</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Leandro Willyan Guimarães Gomes</b><span>Técnico Integrado · PIBIC Jr · Cota Campus</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Humanidades digitais</i><i>Django</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Plataforma web para sistematização e análise das questões da Olimpíada Nacional em História do Brasil (2009–2024). Envolve matriz de categorização historiográfica — temporalidade, tipo de fonte, habilidade cognitiva, sujeitos históricos —, banco relacional em MySQL e aplicação em Python/Django com CRUD operacional e busca em desenvolvimento.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:2"><div class="card-top"><div class="card-head"><span class="card-num">03</span><div class="card-meta"><span class="card-cat">Nanofotônica · Deep learning</span><h3 class="card-name">LLM-Guided Design v2: design inverso de nanoestruturas ópticas</h3></div></div><span class="live-btn">Em andamento</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Breno Inácio Fialho de Assunção</b><span>Engenharia de Telecomunicações · Bolsista FUNCAP/IFCE</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Nanofotônica</i><i>Deep learning</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Agente que prediz geometria e dimensões ideais de nanoestruturas fotônicas a partir de um perfil espectral alvo, treinado com simulações do COMSOL Multiphysics®. A v2 amplia a base para cinco geometrias e para as respostas de absorção e extinção, e enfrenta a não-unicidade do problema inverso com uma arquitetura de Rede Neural Tandem.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:3"><div class="card-top"><div class="card-head"><span class="card-num">04</span><div class="card-meta"><span class="card-cat">RAG · Chatbot</span><h3 class="card-name">Assistente Inteligente do IFCE Campus Maranguape</h3></div></div><span class="live-btn">Em andamento</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>John Keyrrison Lima dos Santos</b><span>Técnico Integrado · PIBIC Jr Ações Afirmativas · Cota Campus</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>RAG</i><i>Chatbot</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Chatbot acadêmico com Geração Aumentada por Recuperação sobre calendário, regimento, ementas, normativas e editais do campus. Base vetorial gratuita (FAISS ou ChromaDB), LLMs de camada livre e transparência obrigatória sobre a fonte de cada resposta, com avaliação comparada ao atendimento humano da secretaria.</p></div></div></div></div></div></div>
+  <h2 class="hero-heading section-title projects-title" id="finalizados">Concluídas</h2>
+  <div class="cards"><div class="card-wrap"><div class="card" style="--i:0"><div class="card-top"><div class="card-head"><span class="card-num">01</span><div class="card-meta"><span class="card-cat">Inclusão · LLM</span><h3 class="card-name">Plataforma Agentes de Inclusão</h3></div></div><span class="live-btn">Concluída</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>José Sátiro de Lima</b><span>Técnico Integrado em Informática · Bolsista CNPq/IFCE</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Inclusão</i><i>LLM</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Portal web com agentes de IA especializados que adaptam avaliações escolares para estudantes com necessidades educacionais específicas — simplificação de linguagem, reorganização estrutural das questões e otimização visual, com exportação em PDF. Requisitos mapeados para estudantes surdos e com TEA; interface prototipada no Figma; testes funcionais concluídos.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:1"><div class="card-top"><div class="card-head"><span class="card-num">02</span><div class="card-meta"><span class="card-cat">Libras · IA generativa</span><h3 class="card-name">Imagens que falam: História para estudantes surdos</h3></div></div><span class="live-btn">Concluída</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Luis Wagner Araújo Colares Filho</b><span>Técnico Integrado · Iniciação Científica</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Libras</i><i>IA generativa</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Produção de ilustrações de conceitos históricos substantivos com IA generativa, para apoiar o ensino de História a estudantes surdos. Inclui mapeamento do currículo do IFCE, registro das especificidades linguísticas da Libras, comparação entre Gemini, ChatGPT, DALL·E e Stable Diffusion, e avaliação das imagens por Tradutores e Intérpretes de Língua de Sinais e por estudantes surdos do campus.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:2"><div class="card-top"><div class="card-head"><span class="card-num">03</span><div class="card-meta"><span class="card-cat">Gênero em STEM · Pesquisa-ação</span><h3 class="card-name">Presença feminina nos cursos de Informática</h3></div></div><span class="live-btn">Concluída</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Rayssa Emelly Moura da Silva</b><span>Técnico Integrado em Informática · Bolsista CNPq/IFCE</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Gênero em STEM</i><i>Pesquisa-ação</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Pesquisa-ação de abordagem mista sobre ingresso e permanência de mulheres no curso técnico do campus. Reúne matrículas do SUAP (2020–2025), formulários com discentes (n=26) e egressas (n=12) e cinco entrevistas transcritas. O diagnóstico — 46,2% das alunas já pensaram em desistir — resultou numa cartilha institucional de acolhimento e representatividade.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:3"><div class="card-top"><div class="card-head"><span class="card-num">04</span><div class="card-meta"><span class="card-cat">Ética digital · Qualitativa</span><h3 class="card-name">Inteligência Artificial na Educação</h3></div></div><span class="live-btn">Concluída</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Arthur</b><span>Técnico Integrado · Iniciação Científica</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Ética digital</i><i>Qualitativa</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Investigação qualitativa sobre como estudantes e docentes do ensino técnico usam IA no cotidiano. Entrevistas semiestruturadas, questionários abertos e observação de práticas escolares, com análise temática em QDA Miner Lite. Revelou perfis distintos — o "tutor particular" discente contra a busca docente por produtividade — e um ponto crítico: metade dos estudantes confia plenamente na resposta gerada, sem checagem.</p></div></div></div></div></div><div class="card-wrap"><div class="card" style="--i:4"><div class="card-top"><div class="card-head"><span class="card-num">05</span><div class="card-meta"><span class="card-cat">Ensino de Matemática · Orange</span><h3 class="card-name">Aprendizado de Máquina com Orange no Ensino de Matemática</h3></div></div><span class="live-btn">Concluída</span></div><div class="card-imgs"><div class="col1"><div class="pn"><small>Bolsista</small><b>Maria Yasmim Teixeira Domingos</b><span>Técnico Integrado · Iniciação Científica</span></div><div class="pn"><small>Áreas</small><div class="chips"><i>Ensino de Matemática</i><i>Orange</i></div></div></div><div class="col2"><div class="pn pn-big"><small>Sobre a pesquisa</small><p>Uso da plataforma Orange para tornar visíveis conceitos matemáticos que costumam ficar restritos à fórmula: média, variância, probabilidade e correlação emergem de fluxos com Distributions, Scatter Plot e Test and Score. Da exploração de datasets clássicos à construção de bases de dados reais do campus.</p></div></div></div></div></div></div>
+</section>
+
+<section class="services sec" id="trajetoria" style="z-index:11">
+  <h2 class="section-title services-title">Trajetória</h2>
+  <p class="sec-sub">O laboratório não começou com um plano de pesquisa formal. Começou com uma impressora 3D, uma pandemia e cinco estudantes dispostos a levar um projeto até o fim.</p>
+  <div class="services-list"><div class="service fade" data-delay="0.0"><span class="service-num">2020</span><div class="service-body"><h3 class="service-name">Nasceu na pandemia</h3><p class="service-desc">Uma <strong>Creality Ender 3</strong> no laboratório de eletrônica e cinco estudantes imprimindo protetores faciais para a rede de saúde de Maranguape: 25 unidades para o <strong>Hospital Municipal Dr. Argeu Braga Herbster</strong>, 25 para a <strong>UPA Dr. Alfredo Marques</strong> e mais 50 para a <strong>Seinfra</strong>. Em outubro o grupo virou projeto de extensão sob o nome <strong>Primeira Impressão</strong>. Em paralelo nascia o <strong>Otto</strong>, robô bípede impresso em 3D com Arduino Nano e Bluetooth — e os primeiros minicursos de Arduino do laboratório.</p></div></div><div class="service fade" data-delay="0.1"><span class="service-num">2021</span><div class="service-body"><h3 class="service-name">Pausa e retomada</h3><p class="service-desc">A segunda onda suspendeu as atividades presenciais entre fevereiro e abril. O laboratório voltou a funcionar em novembro, com uma nova turma de bolsistas e os projetos de robótica retomados de onde tinham parado.</p></div></div><div class="service fade" data-delay="0.2"><span class="service-num">2023</span><div class="service-body"><h3 class="service-name">A safra que consolidou o laboratório</h3><p class="service-desc">Sete projetos de PIBIC Jr conduzidos em paralelo: <strong>Vamos Merendar?</strong> (app contra o desperdício de alimentos no campus), <strong>SiRaL</strong> (sistema de rastreio de alunos), <strong>InfoMarket</strong> (visão computacional para detecção de ofertas em encartes), <strong>Capistrano</strong> (repositório web pelos 170 anos do historiador), <strong>Scratch e TEA</strong> (ensino de matemática para adolescentes autistas), <strong>Mulheres nas Exatas</strong> e a <strong>implantação do Scrum</strong> no próprio laboratório.</p></div></div><div class="service fade" data-delay="0.3"><span class="service-num">2023</span><div class="service-body"><h3 class="service-name">Fora dos muros</h3><p class="service-desc">Semifinal do <strong>Desafio Liga Jovem</strong> com o Vamos Merendar?; <strong>Power4Girls</strong>; <strong>GamesThons</strong>; <strong>MaratonaTech</strong>; participação no <strong>ENICIT 2023</strong> com dez trabalhos discentes; e classificação do Vamos Merendar? para a <strong>FEBRACE 2023–24</strong>.</p></div></div><div class="service fade" data-delay="0.4"><span class="service-num">2024</span><div class="service-body"><h3 class="service-name">Registro e projeção</h3><p class="service-desc">Relato da experiência do laboratório levado ao <strong>Computer on the Beach</strong>, com foco na trajetória das meninas do campus na tecnologia. Segunda edição do <strong>Power4Girls</strong>.</p></div></div><div class="service fade" data-delay="0.4"><span class="service-num">2025</span><div class="service-body"><h3 class="service-name">Sala temática, desfile e ENICIT em casa</h3><p class="service-desc">Quase <strong>190 visitantes</strong> passaram pela sala temática do LEIAH no <strong>Universo IFCE</strong>, uma das mais procuradas do evento — visão computacional rodando ao vivo, tablets com o Vamos Merendar e palestra sobre <strong>algoritmos genéticos</strong>. Em setembro o laboratório desfilou pela primeira vez no <strong>7 de Setembro</strong> de Maranguape, e em outubro o campus sediou o <strong>ENICIT 2025</strong>.</p></div></div><div class="service fade" data-delay="0.4"><span class="service-num">2025</span><div class="service-body"><h3 class="service-name">O ciclo atual (2025 – 2026)</h3><p class="service-desc">Sete frentes simultâneas de setembro de 2025 a agosto de 2026, sob o Edital nº 4/2025 PRPI/Reitoria-IFCE e o PIBIC Jr Ações Afirmativas, com apoio de <strong>CNPq</strong> e <strong>FUNCAP</strong>. Registro mensal de desenvolvimento por bolsista e submissão coletiva ao <strong>CONNEPI 2026</strong>.</p></div></div></div>
+</section>
+
+<section class="projects sec2" id="regras" style="z-index:12">
+  <p class="eyebrow">Cultura</p>
+  <h2 class="hero-heading section-title projects-title">Regras</h2>
+  <p class="sec-sub dk">Estão impressas na parede do laboratório. São curtas de propósito.</p>
+  <div class="rules"><div class="rule fade" data-delay="0.0"><span class="rule-n hero-heading">1</span><p>Ajudar o colega não gera concorrência, gera resultados.</p></div><div class="rule fade" data-delay="0.1"><span class="rule-n hero-heading">2</span><p>Cuide do laboratório. Esse ambiente é de todos.</p></div><div class="rule fade" data-delay="0.2"><span class="rule-n hero-heading">3</span><p>Dê o seu melhor.</p></div><div class="rule fade" data-delay="0.3"><span class="rule-n hero-heading">4</span><p>Uso exclusivo por estudantes vinculados a alguma pesquisa.</p></div><div class="rule fade" data-delay="0.4"><span class="rule-n hero-heading">5</span><p>Se tem alguém trabalhando, silêncio é necessário.</p></div><div class="rule fade" data-delay="0.5"><span class="rule-n hero-heading">6</span><p>O respeito é sempre importante.</p></div></div>
+  <p class="flowline hero-heading">TO DO → DOING → DONE</p>
+</section>
+
+<section class="services sec" id="equipe" style="z-index:13">
+  <h2 class="section-title services-title">Equipe</h2>
+  <p class="sec-sub">As frentes são orientadas por docentes do campus, em regime de encontros semanais com cada bolsista e avaliações parciais a cada dois meses.</p>
+  <div class="people"><div class="person fade" data-delay="0.0"><b>Jessyca Almeida Bessa</b><span>Coordenação do laboratório · Doutorado · Licenciatura em Matemática e Técnico Integrado em Informática</span></div><div class="person fade" data-delay="0.1"><b>Ana Amélia Rodrigues de Oliveira</b><span>Orientação · História e humanidades digitais</span></div><div class="person fade" data-delay="0.2"><b>Maria de Lourdes da Silva Neta</b><span>Orientação · Técnico Integrado em Informática</span></div><div class="person fade" data-delay="0.3"><b>Francisco Marks Cruz</b><span>Orientação · Técnico Integrado em Informática</span></div><div class="person fade" data-delay="0.4"><b>Thomaz Maia</b><span>Orientação · Técnico Integrado em Informática</span></div><div class="person fade" data-delay="0.5"><b>Denilson Cursino</b><span>Orientação · Técnico Integrado em Informática</span></div></div>
+</section>
+
+<section class="projects sec2" id="contato" style="z-index:14">
+  <div class="cta">
+    <h2 class="hero-heading section-title cta-title">Quer fazer pesquisa no LEIAH?</h2>
+    <p>As quatro frentes em andamento já estão com bolsista. Se você estuda no IFCE Campus Maranguape e quer conduzir uma pesquisa própria — do levantamento bibliográfico ao artigo submetido — fale com a coordenação sobre as próximas seleções.</p>
+    <a href="mailto:bessa.jessyca@ifce.edu.br?subject=Interesse%20em%20pesquisa%20no%20LEIAH" class="contact-btn">Falar com a coordenação →</a>
+  </div>
+  <footer class="foot">
+  <div>
+    <p><strong>LEIAH</strong> — Eletrônica, Informática Aplicada e Humanidades</p>
+    <p>
+      Laboratório de pesquisa do Instituto Federal de Educação, Ciência e Tecnologia do
+      Ceará — Campus Maranguape.
+    </p>
+  </div>
+  <div>
+    <h4>Navegar</h4>
+    <a href="#sobre">O laboratório</a><br>
+    <a href="#eixos">Eixos de pesquisa</a><br>
+    <a href="#projetos">Em andamento</a><br>
+    <a href="#finalizados">Finalizados</a><br>
+    <a href="#journey">Trajetória</a><br>
+    <a href="#equipe">Equipe</a>
+  </div>
+  <div>
+    <h4>Contato</h4>
+    <a href="mailto:bessa.jessyca@ifce.edu.br">bessa.jessyca@ifce.edu.br</a><br>
+    <span>IFCE Campus Maranguape — CE</span>
+  </div>
+  <div>
+    <h4>Fomento</h4>
+    <span>CNPq — PIBIC Jr</span><br>
+    <span>FUNCAP</span><br>
+    <span>PRPI / Reitoria IFCE</span>
+  </div>
+  <div>
+    <span>© 2026 LEIAH · IFCE Campus Maranguape</span><br>
+    <span>Ciclo de pesquisa set/2025 – ago/2026</span>
+  </div>
+</footer>
+</section>
+
+</main></div>
+</div>
+</div>
+
+</div><!-- /flow-art -->
+
+<script src="portfolio.js"></script>
+<!-- GSAP (ScrollTrigger e SplitText também são gratuitos desde a v3.13) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
